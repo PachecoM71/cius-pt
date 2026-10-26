@@ -1,0 +1,68 @@
+{
+  "name": "cius-pt",
+  "version": "0.1.0",
+  "description": "Validate Portuguese public-sector e-invoices (CIUS-PT 2.1.1, UBL 2.1) locally and in CI. Validação de faturas eletrónicas CIUS-PT.",
+  "license": "MIT",
+  "author": "Lobuspt",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PachecoM71/cius-pt.git"
+  },
+  "homepage": "https://github.com/PachecoM71/cius-pt#readme",
+  "bugs": {
+    "url": "https://github.com/PachecoM71/cius-pt/issues"
+  },
+  "type": "module",
+  "scripts": {
+    "compile-rules": "tsx scripts/compile-rules.ts spec/cius-pt-2.1.1/schematron/urn_feap.gov.pt_CIUS-PT_2.1.1.sch \"CIUS-PT 2.1.1\" src/rules/cius-pt-2.1.1.ts",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "build": "tsup",
+    "prepublishOnly": "npm run compile-rules && npm run build && npm test"
+  },
+  "dependencies": {
+    "fontoxpath": "^3.34.0",
+    "slimdom": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "eslint": "^10.13.0",
+    "tsup": "^9.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.0",
+    "vitest": "^5.0.5"
+  },
+  "bin": {
+    "cius-pt": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "spec",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "cius-pt",
+    "feap",
+    "e-invoicing",
+    "fatura-eletronica",
+    "portugal",
+    "ubl",
+    "en16931",
+    "schematron",
+    "validation"
+  ]
+}

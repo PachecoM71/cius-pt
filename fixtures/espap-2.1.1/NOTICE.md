@@ -1,0 +1,1 @@
+Sample documents published by eSPap (Entidade de Serviços Partilhados da Administração Pública) with the CIUS-PT 2.1.1 specification, package "Exemplos XML" (Documento.ashx?id=254). Reproduced unchanged, file names shortened, for conformance testing only. F.xml and F_b to F_n are invoices, NC.xml is a credit note, ND.xml is a debit note.
